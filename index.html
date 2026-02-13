@@ -1,0 +1,115 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For My Thambii 💙</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #000428, #004e92);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Pages */
+.page {
+  display: none;
+  height: 100vh;
+  padding-top: 25%;
+}
+
+.page.active {
+  display: block;
+}
+
+/* Arrow */
+.arrow {
+  font-size: 30px;
+  cursor: pointer;
+  margin-top: 40px;
+  color: #00c6ff;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #00c6ff; }
+  to { text-shadow: 0 0 20px #00c6ff; }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgmusic" loop>
+  <source src="bgmusic.mp3" type="audio/mpeg">
+</audio>
+
+<div class="page active">
+  <h1>Eleii thambii dogg 💙💎</h1>
+  <div class="arrow" onclick="nextPage()">➜</div>
+</div>
+
+<div class="page">
+  <h2>my precious gift raa nee 💙💎</h2>
+  <p>LOVE YOU AS ALWAYS daa thangame 💙</p>
+  <div class="arrow" onclick="nextPage()">➜</div>
+</div>
+
+<div class="page">
+  <p>I need you all time daa 💙</p>
+  <p>sorry for everything 💙</p>
+  <div class="arrow" onclick="nextPage()">➜</div>
+</div>
+
+<div class="page">
+  <p>enakkku unmaiyaa nee venum 💙</p>
+  <p>naa irukken seriyaaa 💙💎</p>
+  <div class="arrow" onclick="nextPage()">➜</div>
+</div>
+
+<div class="page">
+  <p>nee eppovum en koodave irukkanum seriyaaa 💙</p>
+  <p>don't leave me 💙</p>
+  <div class="arrow" onclick="nextPage()">➜</div>
+</div>
+
+<div class="page">
+  <p>naan evlo thappu pannalum nee koodave iru seriyaa 💙</p>
+  <p>I know I am not deserved but enakku neee venume 💙</p>
+  <div class="arrow" onclick="nextPage()">➜</div>
+</div>
+
+<div class="page">
+  <p>neeyum jolly aah iru 💙💎</p>
+  <div class="arrow" onclick="restart()">↺</div>
+</div>
+
+<script>
+let currentPage = 0;
+const pages = document.querySelectorAll(".page");
+const music = document.getElementById("bgmusic");
+
+function nextPage() {
+  if (music.paused) music.play();
+  pages[currentPage].classList.remove("active");
+  currentPage++;
+  if (currentPage < pages.length) {
+    pages[currentPage].classList.add("active");
+  }
+}
+
+function restart() {
+  pages[currentPage].classList.remove("active");
+  currentPage = 0;
+  pages[currentPage].classList.add("active");
+}
+</script>
+
+</body>
+</html>
